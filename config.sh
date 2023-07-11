@@ -4,7 +4,7 @@
 export FOX_BRANCH="fox_12.1"
 export DT_LINK="https://github.com/Hasajapathirana/android_device_samsung_p3s-1 -b android-12.1"
 
-export DEVICE=""
+export DEVICE="p3s"
 export OEM="samsung"
 
 # Build Target
