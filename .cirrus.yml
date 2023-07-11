@@ -4,7 +4,7 @@ env:
     OEM: samsung
     DT_PATH: device/$OEM/$DEVICE
     DT_LINK: https://github.com/Hasajapathirana/android_device_samsung_p3s-1
-    TARGET: 
+    TARGET: p3s
     EXTRA_CMD: export 
     OUTPUT: *UNOFFICIAL*.zip
 
