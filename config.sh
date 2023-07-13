@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Device
-export FOX_BRANCH="fox_12.1"
+export FOX_BRANCH="andorid-12.1"
 export DT_LINK="https://github.com/Hasajapathirana/android_device_samsung_p3s-1 -b android-12.1"
 
 export DEVICE="p3s"
@@ -13,7 +13,7 @@ export OEM="samsung"
 ## "vendorbootimage" - for devices Using vendor boot for the recovery ramdisk (Usually for devices shipped with Android 12 or higher)
 export TARGET="recoveryimage"
 
-export OUTPUT="OrangeFox*.zip"
+export OUTPUT="UNOFFICIAL*.zip"
 
 # Additional Dependencies (eg: Kernel Source)
 # Format: "repo dest"
