@@ -4,7 +4,7 @@ env:
     OEM: samsung
     DT_PATH: device/$OEM/$DEVICE
     DT_LINK: https://github.com/Hasajapathirana/android_device_samsung_p3s-1
-    TARGET: 
+    TARGET: twrp_
     EXTRA_CMD: export 
     OUTPUT: *UNOFFICIAL*.zip
 
@@ -13,8 +13,8 @@ task:
   timeout_in: 500m  
   container:
            image: ghcr.io/sushrut1101/docker:arch
-          cpu: 4
-          memory: 16G
+           cpu: 4
+           memory: 16G
 
 
 
@@ -41,7 +41,7 @@ task:
       - echo "Starting the Build..."
       - echo "============================"
       - cd work
-      - . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka pbrp -j`nproc`
+      - . build/envsetup.sh && lunch $TARGET-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka pbrp -j`nproc`
 
   Upload_script:
       - echo "============================"
