@@ -1,62 +1,15 @@
 env:
-    MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git
-    DEVICE: p3s
-    OEM: samsung
-    DT_PATH: device/$OEM/$DEVICE
-    DT_LINK: https://github.com/Hasajapathirana/android_device_samsung_p3s-1
-    TARGET: twrp
-    EXTRA_CMD: export 
-    OUTPUT: *UNOFFICIAL*.zip
+    # Cirrus Specific Vars (Do *NOT* Change)
+    CIRRUS_SHELL: bas
+    CONFIG: config.sh
 
 task:
-  name: "Setting Up, Syncing, Building and Uploading..."
+  name: "Sync_script"
   timeout_in: 500m  
   container:
            image: ghcr.io/sushrut1101/docker:arch
-           cpu: 4
-           memory: 16G
+           cpu: 8
+           memory: 16G 
 
-
-
-  Rm(pkg)_script:
-      - git clone https://github.com/SA-17/rm_pkg pkg && cd pkg && bash setup.sh
-      - sudo -E apt-get -qq install bc build-essential tar zip curl libstdc++6 git wget python3 gcc clang libssl-dev rsync flex curl  bison aria2
-      - sudo apt install repo init
-  
   Sync_script:
-      - echo "============================"
-      - echo "Syncing The Sources..."
-      - echo "============================"
-      - mkdir work
-      - cd work
-      - repo init -u $MANIFEST --depth=1
-      - repo sync -c -j700 --force-sync --no-clone-bundle --no-tags
-      - git clone $DT_LINK --depth=1 --single-branch $DT_PATH
-      - echo "============================"
-      - echo "Syncing Complete!"
-      - echo "============================"
-
-  Build_script:
-      - echo "============================"
-      - echo "Starting the Build..."
-      - echo "============================"
-      - cd work
-      - . build/envsetup.sh && lunch $TARGET-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka pbrp -j`nproc`
-
-  Upload_script:
-      - echo "============================"
-      - echo "Uploading the Build..."
-      - echo "============================"
-      - cd ~/work
-      - cd out/target/product/"$DEVICE"
-      - ls -lh
-      - pwd
-      - chmod 777 *
-      - curl --upload-file $(echo $OUTPUT) https://transfer.sh | tee link.txt && echo " "
-      - echo " "
-      - echo "============================"
-      - echo "Build Uploaded!"
-      - echo "Please see the link Below-  "
-      - echo "----------------------------"
-      - cat link.txt && echo " "
-      - echo "============================"
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/Hasajapathirana/recovery-builder-test/main/Builder.sh)"
