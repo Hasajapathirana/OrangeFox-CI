@@ -1,6 +1,6 @@
 env:
     # Cirrus Specific Vars (Do *NOT* Change)
-    CIRRUS_SHELL: bas
+    CIRRUS_SHELL: bash
     CONFIG: config.sh
 
 task:
