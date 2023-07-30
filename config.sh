@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Device
-export FOX_BRANCH="andorid-12.11"
+export FOX_BRANCH="andorid-12.1"
 export DT_LINK="https://github.com/Hasajapathirana/android_device_samsung_p3s-1 -b android-12.1"
 
 export DEVICE="p3s"
