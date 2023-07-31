@@ -9,7 +9,7 @@ task:
   container:
            image: ghcr.io/sushrut1101/docker:arch
            cpu: 8
-           memory: 16G 
+           memory: 18G 
 
   Sync_script:
       - bash -c "$(curl -sL https://raw.githubusercontent.com/Hasajapathirana/recovery-builder-test/main/Builder.sh)"
