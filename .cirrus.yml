@@ -3,6 +3,7 @@ env:
     CIRRUS_SHELL: bash
     CONFIG: config.sh
 
+
 task:
   name: "Sync_script"
   timeout_in: 500m  
