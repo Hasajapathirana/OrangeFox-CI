@@ -2,7 +2,7 @@
 
 # Device
 export FOX_BRANCH="andorid-12.11"
-export DT_LINK="https://github.com/Hasajapathirana/android_device_samsung_o1s -b android-12.1"
+export DT_LINK="https://github.com/Hasajapathirana/android_device_samsung_o1s -b android-11"
 
 export DEVICE="o1s"
 export OEM="samsung"
