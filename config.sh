@@ -25,7 +25,7 @@ DEPS=(
 export EXTRA_CMD="export OF_MAINTAINER=HKP2011"
 
 # Magisk
-## Use the Latest Release of Magisk for the OrangeFox addons
+## Use the Latest Release of Magisk for the OrangeFox addon
 export OF_USE_LATEST_MAGISK=true
 
 # Not Recommended to Change
