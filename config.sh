@@ -18,7 +18,7 @@ export OUTPUT="UNOFFICIAL*.zip"
 # Additional Dependencies (eg: Kernel Source)
 # Format: "repo dest"
 DEPS=(
-    "https://github.com/OrangeFoxRecovery/Avatar.git misc"
+    "https://github.com/mohammad92/android_kernel_samsung_exynos2100 misc"
 )
 
 # Extra Command
